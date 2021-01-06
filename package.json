@@ -1,7 +1,7 @@
 {
-  "name": "excel-cource",
+  "name": "webpack",
   "version": "1.0.0",
-  "description": "Pure JS Excel App",
+  "description": "my webpack build",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrbur333/excel-course.git"
+    "url": "git+https://github.com/mrbur333/Webpack.git"
   },
   "keywords": [
     "js",
@@ -19,9 +19,9 @@
   "author": "Alexey Burov <mrbur333@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mrbur333/excel-course/issues"
+    "url": "https://github.com/mrbur333/Webpack/issues"
   },
-  "homepage": "https://github.com/mrbur333/excel-course#readme",
+  "homepage": "https://github.com/mrbur333/Webpack#readme",
   "private": true,
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
