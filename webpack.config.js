@@ -44,8 +44,11 @@ module.exports = {
   devtool: isDev ? 'source-map' : false,
   devServer: {
     port: 3000,
-    hot: true,
-    open: true
+    // hot: true,
+    open: true,
+    contentBase: path.join(__dirname, 'src'),
+    watchContentBase: true,
+    hotOnly: true
   },
   target: 'web',
   plugins: [
@@ -66,7 +69,7 @@ module.exports = {
       ]
     }),
     new MiniCssExtractPlugin({
-      filename: filename('css')
+      filename: filename('css'),
     })
   ],
   module: {
@@ -75,17 +78,30 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader',
-          'sass-loader'
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          },
+          'sass-loader',
         ],
       },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: jsLoaders()
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ]
   }
 }
